@@ -1,7 +1,7 @@
-public class Herbivoro extends Animal {
+public class Herbivoros extends Animais {
 
 
-    public Herbivoro(String nome, boolean carnivoro, int vida, String icone) {
-        super(nome, carnivoro, vida, icone);
+    public Herbivoros(String nome, boolean carnivoros, int vida, String icone) {
+        super(nome, carnivoros, vida, icone);
     }
 }

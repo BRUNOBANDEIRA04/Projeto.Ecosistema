@@ -1,15 +1,15 @@
 import java.util.Random;
 
-public class Animal {
+public class Animais {
     int ciclosVida, posicaoX, posicaoY, vida;
     String nome, icone;
-    boolean carnivoro;
+    boolean carnivoros;
 
     Random aleatorio = new Random();
 
-    public Animal(String nome, boolean carnivoro, int vida, String icone) {
+    public Animal(String nome, boolean carnivoros, int vida, String icone) {
         this.nome = nome;
-        this.carnivoro = carnivoro;
+        this.carnivoros = carnivoros;
         this.ciclosVida = 0;
         this.vida = vida;
         this.icone = icone;
@@ -17,14 +17,14 @@ public class Animal {
         this.posicaoY = aleatorio.nextInt(10);
     }
 
-    public void comer(Animal predador, Animal presa, Terreno terreno) {
-        if (predador.carnivoro == true && presa.carnivoro == false) {
+    public void comer(Animais predador, Animais presa, Terreno terreno) {
+        if (predador.carnivoros == true && presa.carnivoros == false) {
             presa.vida--;
             if (presa.vida == 0) {
                 terreno.exibirTerreno();
                 System.out.println(predador.nome + " comeu " + presa.nome);
                 System.out.println(presa.nome + " sobreviveu por " + presa.ciclosVida + " ciclos de vida");
-                terreno.retirarAnimal(presa);
+                terreno.retirarAnimais(presa);
             }
         }
     }
@@ -37,7 +37,7 @@ public class Animal {
         return posicaoY;
     }
 
-    public void mover(Terreno terreno, Animal animal) {
+    public void mover(Terreno terreno, Animais animais) {
         int direcao = new Random().nextInt(4);
         int posX = getposicaoX();
         int posY = getposicaoY();
@@ -57,8 +57,8 @@ public class Animal {
         }
 
         if (posX >= 0 && posX < terreno.getDimensao() && posY >= 0 && posY < terreno.getDimensao()) {
-            terreno.retirarAnimal(animal);
-            terreno.moverAnimal(animal, posX, posY);
+            terreno.retirarAnimais(animais);
+            terreno.moverAnimais(animais, posX, posY);
             posicaoX = posX;
             posicaoY = posY;
 

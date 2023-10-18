@@ -1,11 +1,11 @@
 import java.util.Random;
 
-public class Planta {
+public class Plantas {
     int cicloVida, vida, posicaoX, posicaoY;
     String nome, icone;
     Random aleatorio = new Random();
 
-    public Planta(String nome, int vida, String icone){
+    public Plantas(String nome, int vida, String icone){
         this.nome = nome;
         this.cicloVida = 0;
         this.vida = vida;

@@ -3,22 +3,22 @@ public class App {
 
         Terreno terreno = new Terreno(10);
 
-        Herbivoro coelho = new Herbivoro("Coelho", false, 1, "🐰");
+        Herbivoros coelho = new Herbivoros("Coelho", false, 1, );
 
-        Carnivoro lobo = new Carnivoro("Lobo", true, 5, "🐺");
+        Carnivoros lobo = new Carnivoros("Lobo", true, 5, );
 
-        Planta planta = new Planta("Arbusto", 1, "🪴");
+        Planta plantas = new Plantas("Arbusto", 1, );
 
-        terreno.adicionarAnimal(coelho);
-        terreno.adicionarAnimal(lobo);
+        terreno.adicionarAnimais(coelho);
+        terreno.adicionarAnimais(lobo);
 
         while (true) {
             
-            terreno.adicionarPlanta(planta);
+            terreno.adicionarPlantas(plantas);
             terreno.exibirTerreno();
             coelho.mover(terreno, coelho);
             lobo.mover(terreno, lobo);
-            planta.cicloVida++;
+            plantas.cicloVida++;
             lobo.ciclosVida++;
             coelho.ciclosVida++;
             if (lobo.getposicaoX() == coelho.getposicaoX() && lobo.getposicaoY() == coelho.getposicaoY()) {

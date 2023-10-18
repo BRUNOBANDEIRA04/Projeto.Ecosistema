@@ -32,18 +32,18 @@ public class Terreno {
         System.out.println("");
     }
 
-    public void adicionarAnimal(Animal animal) {
-        area[animal.getposicaoX()][animal.getposicaoY()] = animal.icone;
+    public void adicionarAnimais(Animais animais) {
+        area[animais.getposicaoX()][animal.getposicaoY()] = animais.icone;
     }
 
-    public void moverAnimal(Animal animal, int posX, int posY) {
-        area[posX][posY] = animal.icone;
+    public void moverAnimais(Animais animais, int posX, int posY) {
+        area[posX][posY] = animais.icone;
     }
-    public void adicionarPlanta(Planta planta) {
-        area[planta.posicaoX][planta.posicaoY] = planta.icone;
+    public void adicionarPlantas(Plantas plantas) {
+        area[plantas.posicaoX][plantas.posicaoY] = plantas.icone;
     }
 
-    public void retirarAnimal(Animal animal) {
-        area[animal.getposicaoX()][animal.getposicaoY()] = "__";
+    public void retirarAnimais(Animais animais) {
+        area[animais.getposicaoX()][animais.getposicaoY()] = "__";
     }
 }
